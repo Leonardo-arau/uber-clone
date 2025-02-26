@@ -1,0 +1,43 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+    id "com.google.gms.google-services" 
+}
+
+android {
+    namespace = "com.example.uber"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId = "com.example.uber" // Substitua com o nome correto
+        minSdkVersion 15 // Defina a versão mínima do SDK que seu app suporta
+        targetSdkVersion 33 // Defina a versão do SDK que seu app é compatível
+        versionCode flutterVersionCode.toInteger() // Defina o versionCode
+        versionName flutterVersionName // Defina o versionName
+        multiDexEnabled true // Ativa o MultiDex, necessário se o app exceder o limite de métodos
+    }
+
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
