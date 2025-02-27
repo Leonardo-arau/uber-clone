@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uber/telas/cadastro.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -9,8 +10,8 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  final TextEditingController _controllerEmail = TextEditingController();
-  final TextEditingController _controllerSenha = TextEditingController();
+   TextEditingController _controllerEmail = TextEditingController();
+   TextEditingController _controllerSenha = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +87,12 @@ class _HomeState extends State<Home> {
                     style: TextStyle(color: Colors.white),
                   ),
                   onTap: (){
-
+                    Navigator.push(
+                      context, 
+                      MaterialPageRoute(
+                        builder: (context) => Cadastro()
+                      )
+                    );
                   },
                 ),
                ),
