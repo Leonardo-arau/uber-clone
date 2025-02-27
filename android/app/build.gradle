@@ -11,6 +11,7 @@ android {
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -21,13 +22,14 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.uber" // Substitua com o nome correto
-        minSdkVersion 15 // Defina a versão mínima do SDK que seu app suporta
+        applicationId "com.example.uber"
+        minSdkVersion 23 // Defina a versão mínima do SDK que seu app suporta
         targetSdkVersion 33 // Defina a versão do SDK que seu app é compatível
-        versionCode flutterVersionCode.toInteger() // Defina o versionCode
-        versionName flutterVersionName // Defina o versionName
+        versionCode 1 // Defina manualmente o versionCode
+        versionName "1.0.0" // Defina manualmente o versionName
         multiDexEnabled true // Ativa o MultiDex, necessário se o app exceder o limite de métodos
     }
+
 
     buildTypes {
         release {
