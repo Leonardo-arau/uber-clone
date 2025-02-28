@@ -89,7 +89,7 @@ class _CadastroState extends State<Cadastro> {
                   child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xff546e7a),
+                      backgroundColor: Color(0xff1ebbd8),
                       padding: EdgeInsets.fromLTRB(
                           32, 16, 32, 16), 
                     ),
