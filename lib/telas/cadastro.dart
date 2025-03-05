@@ -74,7 +74,12 @@ class _CadastroState extends State<Cadastro> {
               context, "/painel-passageiro", (_) => false);
           break;
       }
+    }).catchError((error) {
+      _mensagemErro =
+          "Erro ao autenticar usuário, verifique e-email e senha e tente novamente!";
     });
+
+    
   }
 
   @override
