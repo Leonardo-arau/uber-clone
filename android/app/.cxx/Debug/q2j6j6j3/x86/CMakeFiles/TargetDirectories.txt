@@ -1,0 +1,2 @@
+C:/Users/Micro/OneDrive/Documentos/Projetos_Mobile/uber/android/app/.cxx/Debug/q2j6j6j3/x86/CMakeFiles/edit_cache.dir
+C:/Users/Micro/OneDrive/Documentos/Projetos_Mobile/uber/android/app/.cxx/Debug/q2j6j6j3/x86/CMakeFiles/rebuild_cache.dir

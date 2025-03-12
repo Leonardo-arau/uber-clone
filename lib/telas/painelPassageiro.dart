@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'dart:async';
 
 class Painelpassageiro extends StatefulWidget {
   @override
@@ -8,6 +10,8 @@ class Painelpassageiro extends StatefulWidget {
 
 class _PainelpassageiroState extends State<Painelpassageiro> {
   List<String> itensMenu = ["Configurações", "Deslogar"];
+
+  Completer<GoogleMapController> _controller = Completer();
 
   _deslogarUsuario() async {
     FirebaseAuth auth = FirebaseAuth.instance;
@@ -24,6 +28,10 @@ class _PainelpassageiroState extends State<Painelpassageiro> {
       case "Configurações":
         break;
     }
+  }
+
+  _onMapCreated(GoogleMapController controller) {
+    _controller.complete(controller);
   }
 
   @override
@@ -47,7 +55,16 @@ class _PainelpassageiroState extends State<Painelpassageiro> {
           )
         ],
       ),
-      body: Container(),
+      body: Container(
+        child: GoogleMap(
+          mapType: MapType.normal,
+          initialCameraPosition: CameraPosition(
+            target: LatLng(-23.678587548826087, -46.78275369894325),
+            zoom: 16,
+          ),
+          onMapCreated: _onMapCreated,
+        ),
+      ),
     );
   }
 }
